@@ -1,8 +1,26 @@
 #container{
     display: flex;
     justify-content: space-around;
+    
+    background-color:  rgba(179, 171, 136, 0.897);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    height: 80px;
 }
 
 .tab{
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg{
+        display: block;
+        margin: auto;
+        transition: 200ms ease-in-out;
+    }
+    transition: 200ms ease-in-out;
+}
+
+.seleccionado{
+    background-color: rgb(255, 153, 0);
 }
