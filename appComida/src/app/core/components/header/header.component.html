@@ -1,5 +1,5 @@
-<header>
+<header [ngClass]="{extendido: headerService.extendido()}" class="fondo-imagen">
 
-    <h1>{{headerService.titulo}}</h1>
+    <h1 class="{{claseAplicada()}}"(animationend)="mostrarTituloNuevo($event)">{{tituloMostrado()}}</h1>
 
 </header>
