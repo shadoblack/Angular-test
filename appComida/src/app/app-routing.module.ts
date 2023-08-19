@@ -32,6 +32,10 @@ const routes: Routes = [
     path: "buscar",
     component: BuscarComponent
   },
+  {
+    path: "rubro",
+    component: RubroComponent
+  },
 ];
 
 @NgModule({
