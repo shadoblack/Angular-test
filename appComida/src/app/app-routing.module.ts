@@ -21,7 +21,7 @@ const routes: Routes = [
     component: RubroComponent
   },
   {
-    path: "articulo",
+    path: "articulo/:id",
     component: ArticuloComponent
   },
   {
@@ -32,10 +32,7 @@ const routes: Routes = [
     path: "buscar",
     component: BuscarComponent
   },
-  {
-    path: "rubro",
-    component: RubroComponent
-  },
+  
 ];
 
 @NgModule({
