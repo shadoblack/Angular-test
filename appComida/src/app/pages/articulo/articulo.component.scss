@@ -2,7 +2,14 @@
 #fotoProducto{
     width: 100%;
     max-height: 300px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
     object-fit: cover;
+}
+
+.margen-chico{
+    margin-top: 230px;
 }
 
 .margen-chico > * {
@@ -33,12 +40,14 @@ textarea{
     border-radius: 20px;
     border: unset;
     background-color: variables.$color-principal-claro;
+    margin-top: 10px;
     width: 100%;
 }
 
 #cantidad-container{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 button{
