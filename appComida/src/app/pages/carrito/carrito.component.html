@@ -1,2 +1,14 @@
 <p>carrito works!</p>
 <p>El path del carrito esta ok</p>
+<div *ngFor="let producto of cartService.carrito">
+  <p>
+    Producto: {{ producto.idProducto }}
+    <button (click)="eliminarProducto(producto.idProducto)">X</button>
+    <app-contador-cantidad
+      [cantidadInicial]="producto.cantidad"
+      (cantidadCambiada)="
+        cartService.cambiarCantidadProducto(producto.idProducto, $event)
+      "
+    ></app-contador-cantidad>
+  </p>
+</div>
