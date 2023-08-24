@@ -6,13 +6,14 @@ import { HeaderService } from 'src/app/core/services/header.service';
 import { ProductosService } from 'src/app/core/services/productos.service';
 import { ContadorCantidadComponent } from '../../core/components/contador-cantidad/contador-cantidad.component';
 import { CartService } from 'src/app/core/services/cart.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-articulo',
   templateUrl: './articulo.component.html',
   styleUrls: ['./articulo.component.scss'],
   standalone: true,
-  imports: [CommonModule, ContadorCantidadComponent],
+  imports: [CommonModule, ContadorCantidadComponent,FormsModule],
 })
 export class ArticuloComponent {
   headerService = inject(HeaderService);
@@ -21,6 +22,7 @@ export class ArticuloComponent {
 
   producto?: Producto;
   cantidad = signal(1);
+  notas= "";
 
   ngOnInit(): void {
     this.headerService.titulo.set('Artículo');
@@ -37,7 +39,7 @@ export class ArticuloComponent {
   }
   agregarAlCarrito() {
     if (!this.producto) return;
-    this.cartService.agregarProducto(this.producto?.id, this.cantidad());
+    this.cartService.agregarProducto(this.producto?.id, this.cantidad(),this.notas);
     this.router.navigate(['/carrito']);
   }
 }

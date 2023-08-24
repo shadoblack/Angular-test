@@ -1,4 +1,5 @@
 export interface Cart {
     idProducto: number,
-    cantidad: number
+    cantidad: number,
+    notas: string
 }
