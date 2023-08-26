@@ -1,15 +1,33 @@
-<p>carrito works!</p>
-<p>El path del carrito esta ok</p>
-<div *ngFor="let producto of cartService.carrito">
-  <p>
-    Producto: {{ producto.idProducto }}
-    <button (click)="eliminarProducto(producto.idProducto)">X</button>
-    <app-contador-cantidad
-      [cantidadInicial]="producto.cantidad"
-      (cantidadCambiada)="
-        cartService.cambiarCantidadProducto(producto.idProducto, $event)
-      "
-    ></app-contador-cantidad>
-  </p>
-  <p *ngIf="producto.notas !== ''">{{producto.notas}}</p>
+
+<div id="tarjetas-container" class="margen-chico">
+  <div
+    *ngFor="let producto of cartService.carrito, index as i"
+    class="tarjeta-producto-container"
+  >
+  <ng-container *ngIf="productosCarrito[i]">
+    <div id="izq" [ngStyle]="{'background-image': 'url('+productosCarrito[i].fotoUrl+')'}">
+      <div>
+      <img *ngIf="productosCarrito[i].esVegano" src="./../../../assets/icons/vegetariano.svg" alt="vegetariano">
+      <img *ngIf="productosCarrito[i].esCeliaco" src="./../../../assets/icons/celiaco.svg" alt="celiaco">
+    </div>
+  </div>
+    <div id="centro">
+      <p class="negrita">
+        Producto: {{ productosCarrito[i].nombre }}
+        <p *ngIf="producto.notas !== ''">{{ producto.notas }}</p>
+        <app-contador-cantidad
+          [cantidadInicial]="producto.cantidad"
+          (cantidadCambiada)="
+            cartService.cambiarCantidadProducto(producto.idProducto, $event)
+          "
+        ></app-contador-cantidad>
+        
+      
+    </div>
+    <div id="der"><button id="borrar" (click)="eliminarProducto(producto.idProducto)"><img src="./../../../assets/img/borrar.png" id="imgEli"></button>
+    <p class="negrita">{{ productosCarrito[i].precio }} €</p>
+    </div>
+
+  </ng-container>
+  </div>
 </div>
