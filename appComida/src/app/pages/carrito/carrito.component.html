@@ -18,7 +18,7 @@
         <app-contador-cantidad
           [cantidadInicial]="producto.cantidad"
           (cantidadCambiada)="
-            cartService.cambiarCantidadProducto(producto.idProducto, $event)
+            cambiarCantidadProducto(producto.idProducto, $event)
           "
         ></app-contador-cantidad>
         
@@ -31,3 +31,33 @@
   </ng-container>
   </div>
 </div>
+
+<div class="flex-center">
+<a id="mas" [routerLink]="['/']" routerLinkActive="router-link-active" >+</a>
+</div>
+<section class="margen-chico">
+  <h3>Dirección de envío</h3>
+  <div class="flex-apart" id="envios-container">
+    <div>
+    <h4>calle falsa 123</h4>
+    <p> barcelona,cataluña, 08031</p>
+  </div>
+<div>
+  <a [routerLink]="['/perfil']" routerLinkActive="router-link-active"> 
+  <img id="imgLapiz" src="./../../../assets/img/lapiz.png" alt="lapiz">
+</a>
+</div>
+</div>
+<div class="flex-apart" id="totales">
+  <div><p class="negrita">Subtotal</p>
+  <p>Delivery</p>
+  <p class="negrita">Total</p>
+</div>
+  <div id="montos">
+    <p class="negrita"><span>{{subtotal}}</span>€</p>
+    <p><span>{{delivery}}</span>€</p>
+    <p class="negrita"><span>{{total}}</span>€</p>
+  </div>
+</div>
+<button id="enviar">Enviar mensaje</button>
+</section>
