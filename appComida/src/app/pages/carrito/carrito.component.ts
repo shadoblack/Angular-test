@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, WritableSignal, inject, signal } from '@angular/core';
 import { CartService } from 'src/app/core/services/cart.service';
 import { HeaderService } from 'src/app/core/services/header.service';
 import { ContadorCantidadComponent } from '../../core/components/contador-cantidad/contador-cantidad.component';
@@ -23,7 +23,7 @@ export class CarritoComponent {
   perfilService = inject(PerfilService);
   router = inject(Router);
 
-  productosCarrito: Producto[] = [];
+  productosCarrito:WritableSignal <Producto[]> = signal([]);
   subtotal = 0;
   delivery = 100;
   total = 0;
@@ -33,7 +33,7 @@ export class CarritoComponent {
     this.headerService.titulo.set('Carrito');
     this.cartService.carrito.forEach(async (itemCarrito) => {
       const res = await this.productosService.getById(itemCarrito.idProducto);
-      if (res) this.productosCarrito.push(res);
+      if (res) this.productosCarrito.set([...this.productosCarrito(),res]) ;
       this.calcularInformacion();
     });
   }
@@ -46,7 +46,7 @@ export class CarritoComponent {
     this.subtotal = 0;
     for (let i = 0; i < this.cartService.carrito.length; i++) {
       this.subtotal +=
-        this.productosCarrito[i].precio * this.cartService.carrito[i].cantidad;
+        this.productosCarrito()[i].precio * this.cartService.carrito[i].cantidad;
     }
     this.total = this.subtotal + this.delivery;
   }
@@ -60,7 +60,7 @@ export class CarritoComponent {
       const producto = await this.productosService.getById(
         this.cartService.carrito[i].idProducto
       );
-      pedido += `*${this.cartService.carrito[i].cantidad} X ${this.productosCarrito[i].nombre} 
+      pedido += `*${this.cartService.carrito[i].cantidad} X ${producto?.nombre} 
       `;
     }
     const mensaje = `Hola, Soy ${
@@ -90,4 +90,6 @@ export class CarritoComponent {
   editarPedido() {
     this.dialog.nativeElement.close();
   }
+
+  
 }
