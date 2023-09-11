@@ -13,13 +13,12 @@ export class CartService {
         const fechaGuardado = new Date(carritoGuardado.fecha);
         const fecha= new Date();
         const dias = 4 // dias de validez del carrito
-        if(fecha.getTime() - fechaGuardado.getTime() > 1000*60*60*dias) {
-          localStorage.removeItem('cart');
+        if(fecha.getTime() - fechaGuardado.getTime() > 1000*60*60*24*dias) {
+          localStorage.removeItem("cart");
         }else{
           this.carrito = carritoGuardado.productos;
         }
       }
-      this.carrito = JSON.parse(cart);
     }
   }
 
@@ -27,12 +26,12 @@ export class CartService {
   agregarProducto(idProducto: number, cantidad: number, notas: string) {
     const i = this.carrito.findIndex(
       producto => producto.idProducto === idProducto
-    );
+    )
     if (i === -1) {
       const nuevoProducto: Cart = {
         idProducto: idProducto,
         cantidad: cantidad,
-        notas: notas,
+        notas: notas
       };
       this.carrito.push(nuevoProducto);
     } else {

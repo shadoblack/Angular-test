@@ -42,9 +42,9 @@
   <div class="flex-apart" id="envios-container">
     <div>
       <ng-container *ngIf="perfilService.perfil(),else sinDatosEnvio ">
-    <h4>{{perfilService.perfil()?.nombre}}</h4>
-    <p> {{perfilService.perfil()?.direccion}} - {{perfilService.perfil()?.telefono}}</p>
-    <p>{{perfilService.perfil()?.detalleEntrega}}</p>
+    <h4>{{perfilService.perfil()!.nombre}}</h4>
+    <p> {{perfilService.perfil()!.direccion}} - {{perfilService.perfil()?.telefono}}</p>
+    <p>{{perfilService.perfil()!.detalleEntrega}}</p>
   </ng-container>
   <ng-template #sinDatosEnvio></ng-template>
   <p>Ingresa tus datos de envío</p>
@@ -61,12 +61,12 @@
   <p class="negrita">Total</p>
 </div>
   <div id="montos">
-    <p class="negrita"><span>{{subtotal}}</span>€</p>
-    <p><span>{{delivery}}</span>€</p>
-    <p class="negrita"><span>{{total}}</span>€</p>
+    <p class="negrita">{{subtotal}}€</p>
+    <p>{{delivery}}€</p>
+    <p class="negrita">{{total}}€</p>
   </div>
 </div>
-<button id="enviar" (click)="enviarMensaje()">Enviar mensaje</button>
+<button id="enviar" (click)="enviarMensaje()">Realizar pedido</button>
 </section>
 </ng-container>
 <ng-template #sinCarrito>
