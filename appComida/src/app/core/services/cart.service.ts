@@ -1,21 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Cart } from '../interfaces/carrito';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  constructor() {
-    const cart = localStorage.getItem("cart");
+  constructor(private config: ConfigService) {
+    const cart = localStorage.getItem('cart');
     if (cart) {
       const carritoGuardado = JSON.parse(cart);
-      if(carritoGuardado){
+      if (carritoGuardado) {
         const fechaGuardado = new Date(carritoGuardado.fecha);
-        const fecha= new Date();
-        const dias = 4 // dias de validez del carrito
-        if(fecha.getTime() - fechaGuardado.getTime() > 1000*60*60*24*dias) {
-          localStorage.removeItem("cart");
-        }else{
+        const fecha = new Date();
+        if (
+          fecha.getTime() - fechaGuardado.getTime() >
+          1000 *
+            60 *
+            60 *
+            24 *
+            this.config.configuracion().diasVencimientoCarrito
+        ) {
+          this.vaciar();
+        } else {
           this.carrito = carritoGuardado.productos;
         }
       }
@@ -25,13 +32,13 @@ export class CartService {
   carrito: Cart[] = [];
   agregarProducto(idProducto: number, cantidad: number, notas: string) {
     const i = this.carrito.findIndex(
-      producto => producto.idProducto === idProducto
-    )
+      (producto) => producto.idProducto === idProducto
+    );
     if (i === -1) {
       const nuevoProducto: Cart = {
         idProducto: idProducto,
         cantidad: cantidad,
-        notas: notas
+        notas: notas,
       };
       this.carrito.push(nuevoProducto);
     } else {
@@ -43,7 +50,7 @@ export class CartService {
     this.carrito = this.carrito.filter(
       (producto) => producto.idProducto !== idProducto
     );
-    if (this.carrito.length === 0) return localStorage.clear();
+    if (this.carrito.length === 0) return localStorage.removeItem('cart');
     this.actualizarAlmacenamiento();
   }
 
@@ -57,14 +64,15 @@ export class CartService {
   }
 
   actualizarAlmacenamiento() {
-    const fecha= new Date();
+    const fecha = new Date();
     const elementoAGuardar = {
       fecha,
-      producto: this.carrito}
+      producto: this.carrito,
+    };
     localStorage.setItem('cart', JSON.stringify(elementoAGuardar));
   }
-  vaciar(){
+  vaciar() {
     this.carrito = [];
-    localStorage.clear();
+    localStorage.removeItem('cart');
   }
 }
