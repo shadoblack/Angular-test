@@ -3,7 +3,45 @@
     "id": 1,
     "nombre": "Pizzas",
     "fotoUrl": "https://www.laespanolaaceites.com/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg",
-    "productos": []
+    "productos": [
+      {
+      "id": "1",
+      "nombre":"Pizza Margherita",
+      "precio": 8.99,
+      "esVegano":false,
+      "esCeliaco":false,
+      "ingredientes": ["Mozzarella","Tomate","Albahaca"],
+      "fotoUrl": "https://www.annarecetasfaciles.com/files/pizza-margarita-1-scaled.jpg"
+    },
+    {
+      "id": "2",
+      "nombre":"Pizza Pepperoni",
+      "precio": 10.99,
+      "esVegano":false,
+      "esCeliaco":false,
+      "ingredientes": ["Mozzarella","Pepperoni","Tomate"],
+      "fotoUrl": "https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
+    },
+    {
+      "id": "3",
+      "nombre":"Pizza Hawaiana",
+      "precio": 9.99,
+      "esVegano":false,
+      "esCeliaco":false,
+      "ingredientes": ["Mozzarella","Jamón","Piña"],
+      "fotoUrl": "https://assets.unileversolutions.com/recipes-v2/244028.jpg"
+    },
+    {
+      "id": "4",
+      "nombre":"Pizza Vegetariana",
+      "precio": 11.99,
+      "esVegano":true,
+      "esCeliaco":false,
+      "ingredientes": ["Mozzarella","Tomate","Pimiento","Cebolla","Aceitunas"],
+      "fotoUrl": "https://cdn.shopify.com/s/files/1/0191/9978/files/Pizza-Veggie-Supreme-blog.jpg?v=1652775259"
+    }
+
+    ]
   },
   {
     "id": 2,
@@ -11,7 +49,7 @@
     "fotoUrl": "https://img.freepik.com/vector-gratis/hamburguesa-realista-sobre-fondo-pizarra_79603-1042.jpg?w=2000",
     "productos": [
       {
-        "id": "1",
+        "id": "5",
         "nombre":"Hamburguesa con queso",
         "precio": 4.99,
         "esVegano":false,
@@ -20,7 +58,7 @@
         "fotoUrl": "https://quem.com.ar/tienda/wp-content/uploads/2020/12/Grandwich_17-10_-061.jpg"
       },
       {
-        "id": "2",
+        "id": "6",
         "nombre":"Hamburguesa especial",
         "precio": 6.99,
         "esVegano":false,
@@ -29,7 +67,7 @@
         "fotoUrl": "https://elsheriffburger.com/uploads/lh90_elsheriffbuger/products/54/es/img-H.-Especial-5-WEB-de-taman%CC%83o-mediano.jpg"
       },
       {
-        "id": "3",
+        "id": "7",
         "nombre":"Hamburguesa vegana",
         "precio": 8.99,
         "esVegano":true,
@@ -38,7 +76,7 @@
         "fotoUrl": "https://www.pequerecetas.com/wp-content/uploads/2009/04/hamburguesa-de-garbanzos-casera-receta.jpg"
       },
       {
-        "id": "4",
+        "id": "8",
         "nombre":"Hamburguesa celíaca",
         "precio": 6.66,
         "esVegano":false,
@@ -47,7 +85,7 @@
         "fotoUrl": "https://www.perez-h.com/newsite/wp-content/uploads/2016/06/queso-2.jpg"
       },
       {
-        "id": "5",
+        "id": "9",
         "nombre":"Hamburguesa americana",
         "precio": 8.88,
         "esVegano":false,
@@ -56,7 +94,7 @@
         "fotoUrl": "https://www.clarin.com/img/2022/05/27/0HXb0UR0v_2000x1500__1.jpg"
       },
       {
-        "id": "6",
+        "id": "10",
         "nombre":"Medallón platero",
         "precio": 6.19,
         "esVegano":true,
@@ -70,24 +108,125 @@
     "id": 3,
     "nombre": "Postres",
     "fotoUrl": "https://www.recetasnestle.com.ar/sites/default/files/2023-03/postre-en-vaso-dulce-leche.jpg.jpg",
-    "productos": []
+    "productos": [
+      {
+        "id": "11",
+        "nombre":"Tiramisú",
+        "precio": 5.99,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Queso mascarpone","Café","Bizcochos","Cacao"],
+        "fotoUrl": "https://recetasdecocina.elmundo.es/wp-content/uploads/2022/08/tiramisu-postre-italiano.jpg"
+      },
+      {
+        "id": "12",
+        "nombre":"Cheesecake",
+        "precio": 6.99,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Queso crema","Galletas","Mantequilla","Mermelada"],
+        "fotoUrl": "https://www.recetasderechupete.com/wp-content/uploads/2018/03/Tarta-de-queso-Antonio.jpg"
+      },
+      {
+        "id": "13",
+        "nombre":"Brownie",
+        "precio": 4.99,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Chocolate","Mantequilla","Azúcar","Huevos","Harina"],
+        "fotoUrl": "https://www.recetasderechupete.com/wp-content/uploads/2019/11/Brownie-1200x828.jpg"
+      }
+    ]
   },
   {
     "id": 4,
     "nombre": "Bebidas",
     "fotoUrl": "https://img.band.uol.com.br/image/2023/02/09/bebidas-alcoolicas-181014_800x450.webp",
-    "productos": []
+    "productos": [
+      {
+        "id": "14",
+        "nombre":"cola loca",
+        "precio": 1.99,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["cola-loca"],
+        "fotoUrl": "https://www.encopadebalon.com/3493-home_default/coca-cola-lata-33cl-caja-24unid.jpg"
+      },
+      {
+        "id": "15",
+        "nombre":"pepsium",
+        "precio": 1.99,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["pepsium"],
+        "fotoUrl": "https://5sentidos.es/wp-content/uploads/2021/02/pepsi-lata-33cl-5sentidos.png"
+      },
+      {
+        "id": "16",
+        "nombre":"7 arriba",
+        "precio": 1.99,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["7 arriba","8 abajo"],
+        "fotoUrl": "https://lalaguna.naturalwok.com/wp-content/uploads/2020/06/7up.jpg"
+      }
+    ]
   },
   {
     "id": 5,
     "nombre": "Combos",
     "fotoUrl": "https://i-ticketing.iwos.com/1000x1000-th/products/220/products_220_2.png",
-    "productos": []
+    "productos": [
+      {
+        "id": "17",
+        "nombre":"Combo 1",
+        "precio": 14.99,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Hamburguesa con queso","Papas fritas","Refresco"],
+        "fotoUrl": "https://play-lh.googleusercontent.com/HVZOQT6k5qrJtg1DxiMLox2vMnMD9kt9lMx6uZ1LJ2uQ0jdVMccHONIJVQY3jyrPyyWr"
+      },
+      {
+        "id": "18",
+        "nombre":"Combo 2",
+        "precio": 16.99,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Hamburguesa especial","Papas fritas","Refresco"],
+        "fotoUrl": "https://play-lh.googleusercontent.com/HVZOQT6k5qrJtg1DxiMLox2vMnMD9kt9lMx6uZ1LJ2uQ0jdVMccHONIJVQY3jyrPyyWr"
+      },
+      {
+        "id": "19",
+        "nombre":"Combo 3",
+        "precio": 18.99,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Pizza Margherita","Refresco"],
+        "fotoUrl": "https://play-lh.googleusercontent.com/HVZOQT6k5qrJtg1DxiMLox2vMnMD9kt9lMx6uZ1LJ2uQ0jdVMccHONIJVQY3jyrPyyWr"
+      },
+      {
+        "id": "20",
+        "nombre":"Combo 4",
+        "precio": 20.99,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Pizza Pepperoni","Refresco"],
+        "fotoUrl": "https://play-lh.googleusercontent.com/HVZOQT6k5qrJtg1DxiMLox2vMnMD9kt9lMx6uZ1LJ2uQ0jdVMccHONIJVQY3jyrPyyWr"
+      }
+    ]
   },
   {
     "id": 6,
     "nombre": "Recomendados",
     "fotoUrl": "https://eldiariony.com/wp-content/uploads/sites/2/2023/06/shutterstock_521741356.jpg?resize=360,270&quality=80",
-    "productos": []
+    "productos": [{
+      "id": "20",
+      "nombre":"Combo 4",
+      "precio": 20.99,
+      "esVegano":false,
+      "esCeliaco":false,
+      "ingredientes": ["Pizza Pepperoni","Refresco"],
+      "fotoUrl": "https://play-lh.googleusercontent.com/HVZOQT6k5qrJtg1DxiMLox2vMnMD9kt9lMx6uZ1LJ2uQ0jdVMccHONIJVQY3jyrPyyWr"
+    }]
   }
 ]
